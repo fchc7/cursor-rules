@@ -22,7 +22,7 @@
     "mdc",
     "cli"
   ],
-  "author": "fchc7",
+  "author": "fchc7 <jx.zhu@foxmail.com>",
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.3.0",

@@ -27,7 +27,7 @@ Cursor Rule is a command-line tool for pulling Cursor rule files to your local `
 ### Install via npm
 
 ```bash
-npm install -g pullrule
+npm install -g  @fchc8/cursor-rules
 ```
 
 ### Install from source

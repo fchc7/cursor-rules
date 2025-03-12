@@ -27,7 +27,7 @@ Cursor Rule 是一个命令行工具，用于将 Cursor 规则文件拉取到本
 ### 通过 npm 安装
 
 ```bash
-npm install -g pullrule
+npm install -g @fchc8/cursor-rules
 ```
 
 ### 从源代码安装
