@@ -51,8 +51,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Type check
+        run: pnpm run typecheck
+
       - name: Run tests
         run: pnpm test
+
+      - name: Generate coverage report
+        run: pnpm run test:coverage
 
       - name: Configure Git
         run: |

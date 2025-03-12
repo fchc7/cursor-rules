@@ -46,7 +46,6 @@
   },
   "files": [
     "dist",
-    "dist/rules",
-    "rules"
+    "dist/rules"
   ]
 }
