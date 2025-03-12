@@ -13,7 +13,8 @@
     "start": "tsx ./src/index.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "update-readme": "node scripts/update-readme.js"
   },
   "keywords": [
     "cursor",

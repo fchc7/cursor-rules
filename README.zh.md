@@ -1,7 +1,7 @@
 # Cursor Rule
 
-[![版本](https://img.shields.io/badge/版本-1.0.0-blue.svg)](https://github.com/yourusername/cursor-pullrule/releases)
-[![测试覆盖率](https://img.shields.io/badge/测试覆盖率-85%25-green.svg)](https://github.com/yourusername/cursor-pullrule/actions)
+[![版本](https://img.shields.io/npm/v/@fchc8/cursor-rules.svg)](https://www.npmjs.com/package/@fchc8/cursor-rules)
+[![测试覆盖率](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/fchc7/cursor-rules/main/coverage/coverage-summary.json&label=测试覆盖率&query=$.total.lines.pct&suffix=%&color=green)](https://github.com/fchc7/cursor-rules/actions)
 
 [English Documentation](https://github.com/fchc7/cursor-rules?tab=readme-ov-file#cursor-rule)
 

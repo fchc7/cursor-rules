@@ -4,6 +4,7 @@ import { Command } from 'commander';
 import { getRuleFiles, getRuleFolders } from './utils/fileUtils';
 import { promptUserForRuleSelection, promptUserForFolderSelection } from './utils/promptUtils';
 import { pullRuleFiles, pullAllFilesFromFolders } from './utils/pullUtils';
+import { version } from '../package.json'
 
 export async function main() {
     const program = new Command();
@@ -11,7 +12,7 @@ export async function main() {
     program
         .name('pullrule')
         .description('Pull Cursor rule files to your local .cursor/rules directory')
-        .version('1.0.0')
+        .version(version)
         .option('-j, --js', 'Pull JavaScript rules')
         .option('-r, --rust', 'Pull Rust rules')
         .option('-c, --common', 'Pull common rules')
