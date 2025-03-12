@@ -3,7 +3,7 @@
 [![版本](https://img.shields.io/badge/版本-1.0.0-blue.svg)](https://github.com/yourusername/cursor-pullrule/releases)
 [![测试覆盖率](https://img.shields.io/badge/测试覆盖率-85%25-green.svg)](https://github.com/yourusername/cursor-pullrule/actions)
 
-[English Documentation](./README.md)
+[English Documentation](https://github.com/fchc7/cursor-rules?tab=readme-ov-file#cursor-rule)
 
 ## 项目简介
 

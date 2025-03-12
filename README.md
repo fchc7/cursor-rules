@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/cursor-pullrule/releases)
 [![Test Coverage](https://img.shields.io/badge/coverage-85%25-green.svg)](https://github.com/yourusername/cursor-pullrule/actions)
 
-[中文文档](./README.zh.md)
+[中文文档](https://github.com/fchc7/cursor-rules/blob/main/README.zh.md)
 
 ## Introduction
 
