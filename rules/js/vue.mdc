@@ -1,0 +1,57 @@
+---
+description: Vue.js project best practices and coding standards
+globs: src/**/*.vue
+priority: 10
+---
+## Component Standards
+
+### Basic Rules
+- Use Composition API over Options API
+- Use PascalCase for component names
+- Use PascalCase for component references
+- Maintain <script /> <template/> <style /> tag order
+- Define props with defineProps
+- Use defineEmits for events
+- Keep components focused on a single responsibility
+- Use SFC (Single File Components) pattern
+
+### Directory Structure
+
+src/
+├── components/       # Reusable components
+├── views/            # Page views
+├── composables/      # 组合式函数
+├── utils/            # 工具函数
+├── services/         # API 接口
+├── types/            # TypeScript 类型
+└── assets/           # 静态资源
+
+### 组合式函数规范
+
+- 以 `use` 开头命名
+- 一个函数只做一件事
+- 返回响应式数据
+- 注意依赖收集
+
+### 性能优化
+
+- 合理使用 computed
+- v-show vs v-if
+- 使用 defineAsyncComponent
+- keep-alive 缓存
+
+### TypeScript 集成
+
+- 使用 defineComponent
+- Props 类型声明
+- 组件实例类型
+- 响应式类型
+
+## 状态管理
+
+- 小型项目使用 provide/inject
+- 大型项目使用 Pinia
+- 模块化状态管理
+- 合理使用 storeToRefs
+
+

@@ -1,0 +1,118 @@
+---
+description: Rust coding standards and best practices
+globs: src/**/*.rs, lib.rs, main.rs
+priority: 10
+---
+## Code Organization
+
+### Project Structure
+- Follow the standard Cargo project structure
+- Use workspace for multi-crate projects
+- Organize modules logically with clear responsibilities
+- Keep public API surface minimal and well-documented
+
+### Module Organization
+- Use the module system to create clear boundaries
+- Prefer `mod.rs` or inline modules based on project convention
+- Export only what's necessary with `pub use` in the crate root
+- Group related functionality in the same module
+
+## Naming Conventions
+
+- Use `snake_case` for variables, functions, methods, and modules
+- Use `CamelCase` for types, traits, and enum variants
+- Use `SCREAMING_SNAKE_CASE` for constants and static variables
+- Use descriptive names that reflect purpose, not implementation
+- Prefer verbose names over abbreviations
+
+## Error Handling
+
+- Use `Result<T, E>` for operations that can fail
+- Create custom error types for your crates
+- Implement `std::error::Error` for error types
+- Avoid `.unwrap()` and `.expect()` in production code
+- Use `?` operator for error propagation
+- Consider using `anyhow` for application code and `thiserror` for libraries
+
+## Memory Safety
+
+- Avoid `unsafe` code whenever possible
+- When using `unsafe`, document why it's necessary and how safety is maintained
+- Encapsulate `unsafe` code in safe abstractions
+- Use `#[forbid(unsafe_code)]` in crates that should never contain unsafe code
+- Prefer references over raw pointers
+
+## Performance
+
+- Follow the zero-cost abstraction principle
+- Use iterators and closures for expressive, efficient code
+- Consider using `&str` over `String` when possible
+- Use `Vec` and other collections appropriately
+- Profile before optimizing
+- Use `#[inline]` judiciously
+- Consider using `Cow<'a, T>` to avoid unnecessary cloning
+
+## Documentation
+
+- Document all public items
+- Include examples in documentation
+- Use Markdown in doc comments
+- Run `cargo doc --open` to preview documentation
+- Document panics, errors, and safety requirements
+- Use `#[must_use]` for functions with important return values
+
+## Testing
+
+- Write unit tests using `#[test]` attribute
+- Use `#[cfg(test)]` module for test utilities
+- Write integration tests in the `tests/` directory
+- Use property-based testing with crates like `proptest`
+- Aim for high test coverage, especially for complex logic
+- Test edge cases explicitly
+
+## Dependencies
+
+- Keep dependencies minimal
+- Review dependencies for security and maintenance status
+- Use semantic versioning constraints appropriately
+- Consider using `cargo audit` to check for vulnerabilities
+- Prefer standard library solutions when reasonable
+
+## Formatting and Style
+
+- Use `rustfmt` with default settings
+- Run `cargo fmt` before committing
+- Use `clippy` to catch common mistakes
+- Run `cargo clippy` regularly
+- Follow the Rust API Guidelines
+
+## Concurrency and Async
+
+- Use `tokio` for asynchronous programming
+- Prefer `async/await` syntax over manual Future implementations
+- Use `tokio::spawn` for spawning tasks
+- Consider `tokio::select!` for handling multiple concurrent operations
+- Use `std::sync` and `std::thread` for basic thread-based concurrency
+- Consider `rayon` for data parallelism
+- Be careful with shared mutable state
+- Use message passing when appropriate
+- Understand and respect Rust's ownership model
+- Use appropriate synchronization primitives (`Mutex`, `RwLock`, etc.)
+- Consider using channels for communication between tasks
+
+## Type System
+
+- Leverage the type system to prevent errors
+- Use newtypes to provide type safety for primitive types
+- Use enums for representing states
+- Use generics and traits for flexible, reusable code
+- Consider using type state pattern for complex state machines
+
+## Idiomatic Rust
+
+- Prefer methods over functions when appropriate
+- Use builder pattern for complex object construction
+- Implement standard traits (`Debug`, `Clone`, etc.) when appropriate
+- Use pattern matching over complex if/else chains
+- Prefer composition over inheritance
+- Use `Option<T>` instead of nullable types

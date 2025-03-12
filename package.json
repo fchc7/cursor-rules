@@ -1,0 +1,51 @@
+{
+  "name": "cursor-pullrule",
+  "version": "1.0.0",
+  "description": "A command-line tool for generating and pulling Cursor editor rule files",
+  "main": "dist/index.js",
+  "bin": {
+    "pullrule": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsx esbuild.config.ts",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "start": "tsx ./src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "keywords": [
+    "cursor",
+    "editor",
+    "rules",
+    "mdc",
+    "cli"
+  ],
+  "author": "fchc7",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.12"
+  },
+  "devDependencies": {
+    "@esbuild-kit/cjs-loader": "^2.4.4",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.17.24",
+    "@vitest/coverage-v8": "^3.0.8",
+    "esbuild": "^0.25.1",
+    "esbuild-plugin-copy": "^2.1.1",
+    "tsx": "^4.19.3",
+    "typescript": "^5.3.3",
+    "vitest": "^3.0.8"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "dist",
+    "dist/rules",
+    "rules"
+  ]
+}

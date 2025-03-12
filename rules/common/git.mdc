@@ -1,0 +1,120 @@
+---
+description: Git workflow and commit message standards
+globs: .git/*, .github/*, .gitignore
+priority: 10
+---
+## Commit Message Format
+
+### Structure
+
+<type>[emoji]: <subject>
+<body>
+<footer>
+
+
+### Types with Emojis
+- **feat** 🚀: A new feature
+- **fix** 🐛: A bug fix
+- **docs** 📚: Documentation changes
+- **style** 💎: Changes that don't affect code functionality (formatting, etc.)
+- **refactor** ♻️: Code changes that neither fix bugs nor add features
+- **perf** ⚡: Performance improvements
+- **test** ✅: Adding or correcting tests
+- **chore** 🔧: Changes to build process or auxiliary tools
+- **ci** 👷: Changes to CI configuration files and scripts
+- **build** 📦: Changes that affect the build system or external dependencies
+
+### Examples
+
+feat 🚀: add user authentication system
+fix 🐛: resolve memory leak in data processing
+docs 📚: update API documentation
+style 💎: format code according to style guide
+refactor ♻️: simplify payment processing logic
+
+
+### Guidelines
+- Use imperative, present tense: "add" not "added" or "adds"
+- Don't capitalize the subject line
+- No period at the end of the subject line
+- Limit subject line to 72 characters
+- Separate subject from body with a blank line
+- Use the body to explain what and why vs. how
+- Reference issues and pull requests in the footer
+
+## Branching Strategy
+
+### Main Branches
+- **main/master**: Production-ready code
+- **develop**: Latest delivered development changes
+
+### Supporting Branches
+- **feature/**: New features (branched from develop)
+- **release/**: Preparation for a new production release
+- **hotfix/**: Urgent fixes for production issues
+- **bugfix/**: Non-urgent bug fixes (branched from develop)
+
+### Naming Convention
+- Use lowercase and hyphens
+- Include issue number when applicable
+- Be descriptive but concise
+
+feature/user-authentication
+feature/issue-42-payment-gateway
+hotfix/critical-security-issue
+
+
+## Pull Request Process
+
+1. Ensure code passes all tests and linting
+2. Update documentation if necessary
+3. Include relevant issue numbers in PR description
+4. Request review from at least one team member
+5. Squash commits before merging when appropriate
+6. Delete branch after merging
+
+## Git Workflow Best Practices
+
+- Pull and rebase frequently to avoid conflicts
+- Use `git pull --rebase` to keep history clean
+- Commit early and often
+- Squash commits before sharing
+- Never rewrite public history
+- Use .gitignore properly
+- Keep commits atomic and focused
+
+## Code Review Standards
+
+- Review for functionality, not just style
+- Be respectful and constructive
+- Explain reasoning behind suggestions
+- Approve only when all issues are addressed
+- Use GitHub's suggestion feature for small changes
+- Consider performance, security, and maintainability
+
+## GitHub Actions
+
+- Set up CI/CD workflows for:
+  - Running tests
+  - Linting code
+  - Building artifacts
+  - Deploying to environments
+- Use semantic versioning for releases
+- Automate dependency updates with Dependabot
+
+## .gitignore Best Practices
+
+- Automatically detect project type and add appropriate ignore patterns for:
+  - Dependencies (node_modules, vendor, venv, etc.)
+  - Build artifacts (dist, build, target, etc.)
+  - IDE files (.idea, .vscode, etc.)
+  - Environment files (.env*)
+  - Logs and temporary files
+  - OS-specific files (.DS_Store, Thumbs.db)
+
+- Use gitignore.io to generate comprehensive templates based on your tech stack
+- Don't ignore lock files (package-lock.json, yarn.lock) unless you have a specific reason
+- Review and update .gitignore as project dependencies change
+
+
+

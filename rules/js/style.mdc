@@ -1,0 +1,73 @@
+---
+description: CSS/LESS/SCSS styling best practices
+globs: src/**/*.module.{less,scss,sass,css}, src/**/!(*.module).{less,scss,sass,css}
+priority: 10
+---
+## Naming Conventions
+
+### BEM Naming
+
+- Block: Independent entity
+- Element: Use double underscore __
+- Modifier: Use double hyphen --
+
+.block {}
+.block\_\_element {}
+.block--modifier {}
+
+### CSS Modules
+
+-   文件名使用 .module.css
+-   类名使用小驼峰
+-   避免全局样式
+-   合理使用组合
+
+## 目录结构
+
+styles/
+├── global/ # 全局样式
+├── themes/ # 主题文件
+├── variables/ # 变量定义
+├── mixins/ # 混入
+└── components/ # 组件样式
+
+## 响应式设计
+
+-   使用相对单位
+-   移动优先原则
+-   合理使用媒体查询
+-   避免固定宽度
+
+### 断点设置
+
+@screen-xs: 480px;
+@screen-sm: 576px;
+@screen-md: 768px;
+@screen-lg: 992px;
+@screen-xl: 1200px;
+
+## 性能优化
+
+-   避免深层嵌套
+-   合理使用选择器
+-   压缩和合并
+-   CSS 代码分割
+
+## 主题定制
+
+-   使用 CSS 变量
+-   设计 Token 系统
+-   暗黑模式支持
+-   主题切换方案
+
+## 最佳实践
+
+-   避免 !important
+-   模块化样式
+-   注释规范
+-   代码复用
+
+## 插件使用
+
+如果文件夹中存在tailwind和unocss相关的配置文件，则优先使用其规则
+
