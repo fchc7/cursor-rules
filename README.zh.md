@@ -1,4 +1,4 @@
-# Cursor PullRule
+# Cursor Rule
 
 [![版本](https://img.shields.io/badge/版本-1.0.0-blue.svg)](https://github.com/yourusername/cursor-pullrule/releases)
 [![测试覆盖率](https://img.shields.io/badge/测试覆盖率-85%25-green.svg)](https://github.com/yourusername/cursor-pullrule/actions)
@@ -7,7 +7,7 @@
 
 ## 项目简介
 
-Cursor PullRule 是一个命令行工具，用于将 Cursor 规则文件拉取到本地的 `.cursor/rules` 目录中。它帮助用户高效地管理和更新 Cursor 规则，使自定义 Cursor 编辑器体验变得更加简单。
+Cursor Rule 是一个命令行工具，用于将 Cursor 规则文件拉取到本地的 `.cursor/rules` 目录中。它帮助用户高效地管理和更新 Cursor 规则，使自定义 Cursor 编辑器体验变得更加简单。
 
 ## 功能特点
 
@@ -27,14 +27,14 @@ Cursor PullRule 是一个命令行工具，用于将 Cursor 规则文件拉取�
 ### 通过 npm 安装
 
 ```bash
-npm install -g cursor-pullrule
+npm install -g pullrule
 ```
 
 ### 从源代码安装
 
 ```bash
-git clone https://github.com/fchc/cursor-pullrule.git
-cd cursor-pullrule
+git clone https://github.com/fchc7/cursor-rules.git
+cd cursor-rules
 npm install
 npm link
 ```

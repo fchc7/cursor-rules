@@ -1,4 +1,4 @@
-# Cursor PullRule
+# Cursor Rule
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/cursor-pullrule/releases)
 [![Test Coverage](https://img.shields.io/badge/coverage-85%25-green.svg)](https://github.com/yourusername/cursor-pullrule/actions)
@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Cursor PullRule is a command-line tool for pulling Cursor rule files to your local `.cursor/rules` directory. It helps users manage and update their Cursor rules efficiently, making it easier to customize your Cursor editor experience.
+Cursor Rule is a command-line tool for pulling Cursor rule files to your local `.cursor/rules` directory. It helps users manage and update their Cursor rules efficiently, making it easier to customize your Cursor editor experience.
 
 ## Features
 
@@ -27,14 +27,14 @@ Cursor PullRule is a command-line tool for pulling Cursor rule files to your loc
 ### Install via npm
 
 ```bash
-npm install -g cursor-pullrule
+npm install -g pullrule
 ```
 
 ### Install from source
 
 ```bash
-git clone https://github.com/fchc/cursor-pullrule.git
-cd cursor-pullrule
+git clone https://github.com/fchc7/cursor-rules.git
+cd cursor-rules
 npm install
 npm link
 ```
