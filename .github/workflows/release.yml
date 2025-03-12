@@ -98,9 +98,27 @@ jobs:
 
       - name: Generate changelog
         id: changelog
-        uses: metcalfc/changelog-generator@v4.3.1
-        with:
-          myToken: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 获取上一个标签
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+
+          if [ -z "$PREVIOUS_TAG" ]; then
+            # 如果没有标签，获取所有提交
+            CHANGELOG=$(git log --pretty=format:"* %s (%h)" --reverse)
+          else
+            # 获取从上一个标签到现在的提交
+            CHANGELOG=$(git log ${PREVIOUS_TAG}..HEAD --pretty=format:"* %s (%h)" --reverse)
+          fi
+
+          # 如果没有变更，添加默认消息
+          if [ -z "$CHANGELOG" ]; then
+            CHANGELOG="* Initial release"
+          fi
+
+          # 设置多行输出
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGELOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Commit version update
         run: |
