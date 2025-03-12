@@ -4,33 +4,33 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { RuleFile } from '../types/index';
 
-// 获取当前文件目录
+// Get current file directory
 let __filename: string;
 let __dirname: string;
 
-// 这段代码会在编译时被替换
+// This code will be replaced during compilation
 // @ts-ignore
 if (typeof IMPORT_META_URL !== 'undefined') {
-    // ESM 环境
+    // ESM environment
     // @ts-ignore
     __filename = fileURLToPath(IMPORT_META_URL as string);
     __dirname = dirname(__filename);
 } else {
-    // CommonJS 环境
+    // CommonJS environment
     __filename = require.main?.filename || '';
     __dirname = path.dirname(__filename);
 }
 
-// 获取规则目录路径
+// Get rules directory path
 export function getRulesDir() {
-    // 使用环境变量判断环境
+    // Use environment variable to determine environment
     const isDev = process.env.NODE_ENV !== 'production';
 
     if (isDev) {
-        // 开发环境：规则在项目根目录下
+        // Development environment: rules in project root directory
         return path.resolve(process.cwd(), 'rules');
     } else {
-        // 生产环境：规则与可执行文件在同一目录
+        // Production environment: rules in the same directory as executable
         return path.resolve(__dirname, './rules');
     }
 }
@@ -74,13 +74,13 @@ export async function getRuleFiles(modules: string[], baseDir?: string): Promise
             const modulePath = path.join(rulesDir, module);
 
             try {
-                // 尝试访问模块目录
+                // Try to access module directory
                 await fs.access(modulePath).catch(() => {
                     console.warn(`Module ${module} does not exist`);
                     return Promise.reject(new Error('ENOENT'));
                 });
 
-                // 读取模块内容
+                // Read module contents
                 const files = await fs.readdir(modulePath);
                 const mdcFiles = files.filter(file => file.endsWith('.mdc'));
 

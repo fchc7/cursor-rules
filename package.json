@@ -1,6 +1,6 @@
 {
   "name": "@fchc8/cursor-rules",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A command-line tool for generating and pulling Cursor editor rule files",
   "main": "dist/index.js",
   "bin": {
@@ -13,7 +13,7 @@
     "start": "tsx ./src/index.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage",
+    "test:coverage": "vitest run --coverage && node scripts/generate-coverage-summary.js",
     "update-readme": "node scripts/update-readme.js"
   },
   "keywords": [

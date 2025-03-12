@@ -24,8 +24,22 @@ jobs:
           version: 7
           run_install: false
 
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Run tests with coverage
         run: pnpm run test:coverage
@@ -36,7 +50,12 @@ jobs:
           VERSION=$(node -p "require('./package.json').version")
 
           # Get coverage from coverage report
-          COVERAGE=$(node -p "Math.round(require('./coverage/coverage-summary.json').total.lines.pct)")
+          if [ -f "./coverage/coverage-summary.json" ]; then
+            COVERAGE=$(node -p "Math.round(require('./coverage/coverage-summary.json').total.lines.pct)")
+          else
+            echo "Coverage summary file not found, using default value"
+            COVERAGE=0
+          fi
 
           # Update README.md
           sed -i "s/version-[0-9.]*-blue/version-$VERSION-blue/" README.md

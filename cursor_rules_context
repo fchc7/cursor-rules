@@ -1,13 +1,8 @@
----
-description: Git workflow and commit message standards
-globs: .git/*, .github/*, .gitignore
-alwaysApply: false
----
----
-description: Git workflow and commit message standards
-globs: .git/*, .github/*, .gitignore
-priority: 10
----
+Cursor Rules are extra documentation provided by the user to help the AI understand the codebase.
+Use them if they seem useful to the users most recent query, but do not use them if they seem unrelated.
+
+Rule Name: git.mdc
+Description: Git workflow and commit message standards
 
 ## Commit Message Format
 
